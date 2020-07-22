@@ -1,9 +1,7 @@
-.header {
-  height: 10vh;
-  background-color: yellow;
-  color: brown;
-
-  &__title {
-    text-transform: uppercase;
-  }
+.title {
+  margin: 0 auto;
+  padding: 20px 0;
+  text-align: center;
+  font: $base-font-weight-medium $title-font-size/1 $base-font-family;
+  color: $color-dark-blue;
 }
