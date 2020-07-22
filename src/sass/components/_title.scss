@@ -1,0 +1,9 @@
+.header {
+  height: 10vh;
+  background-color: yellow;
+  color: brown;
+
+  &__title {
+    text-transform: uppercase;
+  }
+}
