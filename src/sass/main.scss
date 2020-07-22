@@ -1,1 +1,11 @@
+@import './base/normalize';
+@import './base/typography';
+
+@import './utilities/variables';
+
 @import './components/title';
+@import './components/pet-image';
+@import './components/pet-button';
+
+@import './layouts/header';
+@import './layouts/main-section';

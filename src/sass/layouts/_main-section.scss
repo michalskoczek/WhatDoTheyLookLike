@@ -1,0 +1,22 @@
+.main {
+  position: relative;
+  height: 80vh;
+  max-width: 100vw;
+  background-color: $color-light-blue;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+  &__pets-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    height: 85%;
+    width: 70%;
+    margin: 0 auto;
+    transform: translate(-50%, -50%);
+    //background-color: #ddd;
+  }
+}

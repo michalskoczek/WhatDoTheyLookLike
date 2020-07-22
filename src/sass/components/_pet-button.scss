@@ -1,0 +1,14 @@
+.pet-button {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: 36px;
+  width: 130px;
+  border: none;
+  border-radius: 20px;
+  font: $base-font-weight-bold $button-font-size/1 $base-font-family;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: $color-red;
+  transform: translate(-50%, 50%);
+}
