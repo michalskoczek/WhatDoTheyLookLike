@@ -7,6 +7,7 @@
   <meta name="author" content="Michał Skoczek">
   <meta name="description"
     content="The website displays pictures of all breeds of dogs and cats . It uses two separate APIs.">
+  <link rel="stylesheet" href="../node_modules/flickity/dist/flickity.min.css" media="screen">
   <title>What do they look like?</title>
 </head>
 
@@ -14,14 +15,30 @@
   <header class="header">
     <h1 class="title header__title">What do they look like?</h1>
   </header>
+
   <main class="main">
     <div class="main__pets-container">
-      <div class="pet-image">
+      <div class="dog-container">
+        <div class="main-carousel" data-flickity>
+          <div class="carousel-cell"></div>
+          <div class="carousel-cell"></div>
+          <div class="carousel-cell"></div>
+          <div class="carousel-cell"></div>
+        </div>
+        <button class="pet-button">dogs</button>
       </div>
-      <div class="pet-image">
+      <div class="cat-container">
+        <div class="main-carousel" data-flickity>
+          <div class="carousel-cell"></div>
+          <div class="carousel-cell"></div>
+          <div class="carousel-cell"></div>
+          <div class="carousel-cell"></div>
+        </div>
+        <button class="pet-button">cats</button>
       </div>
     </div>
   </main>
+  <script src="../node_modules/flickity/dist/flickity.pkgd.min.js"></script>
 </body>
 
 </html>
