@@ -1,9 +1,9 @@
 import './sass/main.scss';
 import Flickity from './js/Flickity.js';
-import getRandomImages from './js/getDogImg';
-import Image from './js/Image';
+import Dog from './js/dog/Dog';
 
-const img = new Image;
-img.makeCarouselCell(4, 'dog')
+
+const img = new Dog();
+img.makeCarouselCell();
+img.putImgToCell();
 Flickity();
-getRandomImages('https://dog.ceo/api/breeds/image/random/4');
