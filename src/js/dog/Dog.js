@@ -18,12 +18,25 @@ class Dog {
     )
   }
 
-  async putImgToCell() {
+  addBackground(element, url) {
+    const background = document.createElement('div');
+    background.classList.add('carousel-cell__background');
+    background.style.backgroundImage = `url(${url})`;
+    element.appendChild(background);
+  }
+
+  addImage(element, image) {
+    const img = document.createElement('img');
+    img.classList.add('carousel-cell__img');
+    img.src = image;
+    element.appendChild(img);
+  }
+
+  async addCell() {
     const images = await loadRandomImages(`https://dog.ceo/api/breeds/image/random/${this.quantityOfImages}`);
     this.carouselCells.forEach((element, index) => {
-      const img = document.createElement('img');
-      img.src = images[index];
-      element.appendChild(img);
+      this.addBackground(element, images[index]);
+      this.addImage(element, images[index]);
     })
   }
 }
