@@ -2,11 +2,13 @@
 @import './base/typography';
 
 @import './utilities/variables';
+@import './utilities/break-points';
 
 @import './components/title';
 @import './components/pet-image';
 @import './components/pet-button';
 @import './components/carousel';
 
+@import './layouts/wrapper';
 @import './layouts/header';
 @import './layouts/main-section';
