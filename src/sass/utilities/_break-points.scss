@@ -1,0 +1,44 @@
+$xs: "min-width: 360px";
+$sm: "min-width: 576px";
+$md: "min-width: 768px";
+$lg: "min-width: 992px";
+$xl: "min-width: 1200px";
+$xxl: "min-width: 1400px";
+
+@mixin breakPoint($size) {
+  @if $size==xs {
+    @media all and ($xs) {
+      @content;
+    }
+  }
+
+  @if $size==sm {
+    @media all and ($sm) {
+      @content;
+    }
+  }
+
+  @if $size==md {
+    @media all and ($md) {
+      @content;
+    }
+  }
+
+  @if $size==lg {
+    @media all and ($lg) {
+      @content;
+    }
+  }
+
+  @if $size==xl {
+    @media all and ($xl) {
+      @content;
+    }
+  }
+
+  @if $size==xxl {
+    @media all and ($xxl) {
+      @content;
+    }
+  }
+}
