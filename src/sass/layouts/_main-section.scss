@@ -6,6 +6,13 @@
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 
+  @include breakPoint(xl) {
+    height: 100vh;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 20px;
+  }
+
   &__pets-container {
     display: flex;
     flex-direction: column;
@@ -14,9 +21,14 @@
     top: 48%;
     left: 50%;
     height: 85%;
-    width: 70%;
+    width: 82%;
     margin: 0 auto;
     transform: translate(-50%, -50%);
     //background-color: #ddd;
   }
+}
+
+.dog-container,
+.cat-container {
+  position: relative;
 }
