@@ -1,0 +1,24 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include breakPoint(xl) {
+    flex-wrap: nowrap
+  }
+
+  &__header {
+    flex-basis: 100%;
+
+    @include breakPoint(xl) {
+      flex-basis: 30%;
+    }
+  }
+
+  &__main {
+    flex-basis: 100%;
+
+    @include breakPoint(xl) {
+      flex-basis: 70%;
+    }
+  }
+}
