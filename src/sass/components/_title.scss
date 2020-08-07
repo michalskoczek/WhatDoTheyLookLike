@@ -1,7 +1,17 @@
 .title {
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 10px 0;
   text-align: center;
   font: $base-font-weight-medium $title-font-size/1 $base-font-family;
   color: $color-dark-blue;
+
+  @include breakPoint(xs) {
+    font-size: $title-font-size-xs;
+    padding: 15px 0;
+  }
+
+  @include breakPoint(md) {
+    font-size: $title-font-size-md;
+    padding: 15px 0;
+  }
 }
