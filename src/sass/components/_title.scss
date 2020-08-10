@@ -6,12 +6,26 @@
   color: $color-dark-blue;
 
   @include breakPoint(xs) {
-    font-size: $title-font-size-xs;
     padding: 15px 0;
+    font-size: $title-font-size-xs;
   }
 
   @include breakPoint(md) {
-    font-size: $title-font-size-md;
     padding: 15px 0;
+    font-size: $title-font-size-md;
+  }
+
+  @include breakPoint(xl) {
+    padding: 15px 80px;
+    font-size: $title-font-size-xl;
+    font-weight: $base-font-weight-bold;
+    text-align: left;
+    line-height: 1.5;
+  }
+
+  @include breakPoint(xxl) {
+    padding: 15px 150px;
+    font-size: $title-font-size-xxl;
+    line-height: 1.5;
   }
 }

@@ -11,4 +11,20 @@
   color: #fff;
   background-color: $color-red;
   transform: translate(-50%, 50%);
+  z-index: 99;
+
+  @include breakPoint(xl) {
+    left: -37%;
+    bottom: 35%;
+    width: 260px;
+    font-size: $button-font-size-large;
+  }
+
+  .dog-container & {
+    @include breakPoint(xl) {
+      left: -37%;
+      bottom: 45%;
+      width: 260px;
+    }
+  }
 }
