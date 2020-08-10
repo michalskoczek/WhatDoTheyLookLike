@@ -1,6 +1,6 @@
 .carousel-cell {
   position: relative;
-  width: 100%;
+  width: 90%;
   height: 170px;
   margin-right: 20px;
   border-radius: 20px;
@@ -13,7 +13,7 @@
   }
 
   @media all and (min-width: 360px) and (min-height: 668px) and (orientation: portrait) {
-    height: 220px;
+    height: 200px;
   }
 
   @media all and (min-width: 360px) and (min-height: 800px) and (orientation: portrait) {
@@ -21,11 +21,11 @@
   }
 
   @include breakPoint(md) {
-    height: 310px;
+    height: 270px;
   }
 
   @include breakPoint(lg) {
-    height: 410px;
+    height: 360px;
   }
 
   @include breakPoint(xl) {
