@@ -24,10 +24,14 @@
     width: 82%;
     margin: 0 auto;
     transform: translate(-50%, -50%);
-    //background-color: #ddd;
 
     @include breakPoint(xl) {
+      flex-direction: row;
       flex-wrap: wrap;
+      justify-content: space-evenly;
+      top: 50%;
+      height: 90%;
+      width: 97%;
     }
   }
 }
@@ -37,6 +41,12 @@
   position: relative;
 
   @include breakPoint(xl) {
+    flex-basis: 45%;
+    height: 300px;
     position: static;
+  }
+
+  @include breakPoint(xxl) {
+    height: 400px;
   }
 }

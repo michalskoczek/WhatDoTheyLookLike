@@ -14,7 +14,7 @@
   z-index: 99;
 
   @include breakPoint(xl) {
-    left: -37%;
+    left: -26%;
     bottom: 35%;
     width: 260px;
     font-size: $button-font-size-large;
@@ -22,9 +22,13 @@
 
   .dog-container & {
     @include breakPoint(xl) {
-      left: -37%;
+      left: -26%;
       bottom: 45%;
       width: 260px;
+    }
+
+    @include breakPoint(xxl) {
+      bottom: 42%;
     }
   }
 }
