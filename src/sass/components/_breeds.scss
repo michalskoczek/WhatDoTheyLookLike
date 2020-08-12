@@ -1,11 +1,50 @@
-.breeds-dog {
-  width: 50%;
-  height: 50%;
-  background-color: #ddd;
-}
+.breeds {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  flex-basis: 45%;
+  align-items: center;
+  height: 270px;
+  overflow-y: auto;
 
-.breeds-cat {
-  width: 50%;
-  height: 50%;
-  background-color: yellow;
+  &__name {
+    height: 36px;
+    width: 185px;
+    margin: 0 10px 10px 0;
+    align-self: flex-start;
+    border: transparent;
+    border-radius: 20px;
+    font-size: $button-font-size;
+    font-family: $alt-font-family;
+    line-height: 2;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: $color-dark-blue;
+
+    @include breakPoint(xxl) {
+      width: 260px;
+      margin: 0 20px 10px 5px;
+    }
+
+  }
+
+  &::-webkit-scrollbar {
+    width: 16px;
+    background-color: transparent;
+    color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    background-color: $color-red;
+  }
+
+  /* @include breakPoint(xl) {
+    display: flex;
+  } */
+
+  @include breakPoint(xxl) {
+    height: 400px;
+  }
 }
