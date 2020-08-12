@@ -1,5 +1,5 @@
 .breeds {
-  display: flex;
+  display: none;
   flex-wrap: wrap;
   justify-content: space-between;
   flex-basis: 45%;
@@ -40,9 +40,9 @@
     background-color: $color-red;
   }
 
-  /* @include breakPoint(xl) {
+  @include breakPoint(xl) {
     display: flex;
-  } */
+  }
 
   @include breakPoint(xxl) {
     height: 400px;
