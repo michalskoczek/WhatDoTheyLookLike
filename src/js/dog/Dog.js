@@ -1,4 +1,4 @@
-import loadRandomImages from './getDogImgs';
+import loadRandomImages from './getDogData';
 
 class Dog {
   constructor() {
