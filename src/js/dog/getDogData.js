@@ -1,4 +1,4 @@
-async function loadRandomImages(url) {
+async function getDogData(url) {
   try {
     const request = await fetch(url);
     const data = await request.json();
@@ -9,4 +9,4 @@ async function loadRandomImages(url) {
   }
 }
 
-export default loadRandomImages;
+export default getDogData;
