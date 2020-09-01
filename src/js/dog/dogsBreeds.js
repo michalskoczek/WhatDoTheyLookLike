@@ -41,3 +41,6 @@ async function showAllBreeds() {
 }
 
 export default createBreedElement;
+export {
+  showAllBreeds
+};
