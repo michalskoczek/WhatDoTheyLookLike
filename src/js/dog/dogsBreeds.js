@@ -1,14 +1,12 @@
 import loadAllBreedsNames from './getDogData';
 const number = 19;
 
-function createBreedElement() {
+function createBreedElement(name) {
   const breedsContainer = document.querySelector('.breeds');
-
   const breedElement = document.createElement('div');
   breedElement.className = 'breeds__name';
   breedElement.innerText = name;
   breedsContainer.appendChild(breedElement);
-
 }
 
 function addBreed(breed, subBreed) {
