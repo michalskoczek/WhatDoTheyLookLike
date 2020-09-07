@@ -21,24 +21,25 @@ function addBreed(breed, subBreed) {
     type = `${breed}/${subBreed}`;
   }
 
-  createBreedElement();
+  createBreedElement(name);
 }
 
 async function showAllBreeds() {
-  const breeds = await loadAllBreedsNames('https://dog.ceo/api/breeds/list/all');
+  const breeds = await loadAllBreedsNames(
+    'https://dog.ceo/api/breeds/list/all',
+  );
 
   for (const breed in breeds) {
     if (breeds[breed].length === 0) {
-      addBreed(breed)
+      addBreed(breed);
     } else {
       for (const subBreed of breeds[breed]) {
-        addBreed(breed, subBreed)
+        addBreed(breed, subBreed);
       }
     }
   }
 }
 
-export default createBreedElement;
 export {
   showAllBreeds
 };
