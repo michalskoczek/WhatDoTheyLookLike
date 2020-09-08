@@ -52,14 +52,24 @@ async function showAllBreeds() {
     'https://dog.ceo/api/breeds/list/all',
   );
 
+  console.log(breeds)
   for (const breed in breeds) {
-    if (breeds[breed].length === 0) {
-      addBreed(breed);
-    } else {
-      for (const subBreed of breeds[breed]) {
-        addBreed(breed, subBreed);
+    if (numberOfBreedButtons < quantityOfButtons) {
+      if (breeds[breed].length === 0) {
+        addBreed(breed);
+        delete breeds[breed];
+      } else {
+        for (const subBreed of breeds[breed]) {
+          addBreed(breed, subBreed);
+          delete breeds[breed];
+        }
       }
+    } else if (numberOfBreedButtons === quantityOfButtons) {
+      createMoreButton();
+      restBreeds = breeds;
+      return restBreeds;
     }
+    numberOfBreedButtons++;
   }
 }
 
