@@ -1,12 +1,35 @@
 import loadAllBreedsNames from './getDogData';
-const number = 19;
+const breedsContainer = document.querySelector('.breeds');
+let numberOfBreedButtons = 0;
+let quantityOfButtons = 19;
+let restBreeds;
 
 function createBreedElement(name) {
-  const breedsContainer = document.querySelector('.breeds');
-  const breedElement = document.createElement('div');
+  const breedElement = document.createElement('button');
   breedElement.className = 'breeds__name';
   breedElement.innerText = name;
   breedsContainer.appendChild(breedElement);
+}
+
+function createMoreButton() {
+  const moreButton = document.createElement('button');
+  moreButton.className = 'breeds__name--more';
+  moreButton.innerText = 'more breeds';
+  breedsContainer.appendChild(moreButton);
+
+  moreButton.addEventListener('click', () => {
+    moreButton.style.display = 'none';
+
+    for (const breed in restBreeds) {
+      if (restBreeds[breed].length === 0) {
+        addBreed(breed);
+      } else {
+        for (const subBreed of restBreeds[breed]) {
+          addBreed(breed, subBreed);
+        }
+      }
+    }
+  })
 }
 
 function addBreed(breed, subBreed) {
