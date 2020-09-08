@@ -8,25 +8,23 @@
   overflow-y: auto;
 
   &__name {
-    height: 36px;
-    width: 185px;
-    margin: 0 10px 10px 0;
-    align-self: flex-start;
-    border: transparent;
-    border-radius: 20px;
-    font-size: $button-font-size;
-    font-family: $alt-font-family;
-    line-height: 2;
-    text-align: center;
-    text-transform: capitalize;
-    color: #ffffff;
-    background-color: $color-dark-blue;
+    @include breed-button;
 
     @include breakPoint(xxl) {
       width: 260px;
       margin: 0 20px 10px 5px;
     }
 
+    @include outline;
+
+    &--more {
+      @include breed-button;
+
+      @include outline;
+
+      text-transform: lowercase;
+      background-color: $color-red;
+    }
   }
 
   &::-webkit-scrollbar {
