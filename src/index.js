@@ -9,5 +9,4 @@ const dog = new Dog();
 dog.makeCarouselCell();
 dog.addCell();
 Flickity();
-//createBreedElement(20);
 showAllBreeds();
