@@ -1,14 +1,26 @@
 import loadAllBreedsNames from './getDogData';
+
 const breedsContainer = document.querySelector('.breeds');
+const urlAPI = 'https://dog.ceo/api/breeds/list/all';
 let numberOfBreedButtons = 0;
 let quantityOfButtons = 19;
 let restBreeds;
 
-function createBreedElement(name) {
+function createBreedButton(name, type) {
   const breedElement = document.createElement('button');
   breedElement.className = 'breeds__name';
   breedElement.innerText = name;
   breedsContainer.appendChild(breedElement);
+
+  breedElement.addEventListener('click', async () => {
+    const urlImg = await loadAllBreedsNames('https://dog.ceo/api/breed/hound/images/random/4')
+    console.log(urlImg);
+    const carouselImgs = [...document.querySelectorAll('.carousel-cell__img')];
+    carouselImgs.forEach((img, index) => {
+      img.src = `${urlImg[index]}`
+    })
+
+  })
 }
 
 function createMoreButton() {
