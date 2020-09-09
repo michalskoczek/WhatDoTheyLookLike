@@ -56,13 +56,11 @@ function addBreed(breed, subBreed) {
     type = `${breed}/${subBreed}`;
   }
 
-  createBreedElement(name);
+  createBreedButton(name);
 }
 
 async function showAllBreeds() {
-  const breeds = await loadAllBreedsNames(
-    'https://dog.ceo/api/breeds/list/all',
-  );
+  const breeds = await loadAllBreedsNames(urlAPI);
 
   console.log(breeds)
   for (const breed in breeds) {
