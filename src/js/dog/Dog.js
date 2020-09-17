@@ -1,10 +1,15 @@
 import loadRandomImages from './getDogData';
+import {
+  showLoading,
+  hideLoading
+} from '../loader';
 
 class Dog {
   constructor() {
     this.containerCarousel = document.querySelector('.main-carousel');
     this.carouselCells = [];
-    this.quantityOfImages = 8;
+    this.quantityOfImages = 4;
+    this.loader = document.querySelector('.loader');
   }
 
   makeCarouselCell() {
@@ -33,11 +38,13 @@ class Dog {
   }
 
   async addCell() {
+    showLoading(this.loader);
     const images = await loadRandomImages(`https://dog.ceo/api/breeds/image/random/${this.quantityOfImages}`);
     this.carouselCells.forEach((element, index) => {
       this.addBackground(element, images[index]);
       this.addImage(element, images[index]);
     })
+    hideLoading(this.loader);
   }
 }
 

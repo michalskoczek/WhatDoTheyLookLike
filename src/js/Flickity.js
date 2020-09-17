@@ -3,9 +3,10 @@ export default function () {
   const flkty = new Flickity(carousels[0], {
     cellAlign: 'left',
     contain: true,
-    freeScroll: true,
+    freeScroll: false,
+    wrapAround: true,
     contain: true,
-    prevNextButtons: false,
+    prevNextButtons: true,
     pageDots: false
   });
   const flktySec = new Flickity(carousels[1], {

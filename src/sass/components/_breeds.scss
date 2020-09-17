@@ -17,6 +17,10 @@
 
     @include outline;
 
+    &:focus {
+      background-color: $color-red;
+    }
+
     &--more {
       @include breed-button;
 
@@ -24,6 +28,12 @@
 
       text-transform: lowercase;
       background-color: $color-red;
+
+      @include breakPoint(xxl) {
+        width: 260px;
+        margin: 0 20px 10px 5px;
+      }
+
     }
   }
 

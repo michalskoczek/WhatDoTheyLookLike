@@ -1,7 +1,12 @@
 import loadAllBreedsNames from './getDogData';
+import {
+  showLoading,
+  hideLoading
+} from '../loader';
 
 const breedsContainer = document.querySelector('.breeds');
 const urlAPI = 'https://dog.ceo/api/breeds/list/all';
+const loader = document.querySelector('.loader');
 let numberOfBreedButtons = 0;
 let quantityOfButtons = 19;
 let restBreeds;
@@ -13,15 +18,25 @@ function createBreedButton(name, type) {
   breedsContainer.appendChild(breedElement);
 
   breedElement.addEventListener('click', async () => {
-    const urlImg = await loadAllBreedsNames('https://dog.ceo/api/breed/hound/images/random/4')
-    console.log(urlImg);
-    const carouselImgs = [...document.querySelectorAll('.carousel-cell__img')];
-    carouselImgs.forEach((img, index) => {
-      img.src = `${urlImg[index]}`
-    })
+    showLoading(loader);
+    const urlImg = await loadAllBreedsNames(
+      `https://dog.ceo/api/breed/${type}/images/random/4`,
+    );
 
-  })
+    const carouselImgs = [...document.querySelectorAll('.carousel-cell__img')];
+    const carouselBackgroundImgs = [...document.querySelectorAll('.carousel-cell__background')];
+
+
+    carouselImgs.forEach((img, index) => {
+      img.src = `${urlImg[index]}`;
+    });
+    carouselBackgroundImgs.forEach((bgcImg, index) => {
+      bgcImg.style.backgroundImage = `url(${urlImg[index]})`
+    })
+    hideLoading(loader)
+  });
 }
+
 
 function createMoreButton() {
   const moreButton = document.createElement('button');
@@ -41,7 +56,7 @@ function createMoreButton() {
         }
       }
     }
-  })
+  });
 }
 
 function addBreed(breed, subBreed) {
@@ -56,13 +71,12 @@ function addBreed(breed, subBreed) {
     type = `${breed}/${subBreed}`;
   }
 
-  createBreedButton(name);
+  createBreedButton(name, type);
 }
 
 async function showAllBreeds() {
   const breeds = await loadAllBreedsNames(urlAPI);
 
-  console.log(breeds)
   for (const breed in breeds) {
     if (numberOfBreedButtons < quantityOfButtons) {
       if (breeds[breed].length === 0) {
