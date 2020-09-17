@@ -71,13 +71,12 @@ function addBreed(breed, subBreed) {
     type = `${breed}/${subBreed}`;
   }
 
-  createBreedButton(name);
+  createBreedButton(name, type);
 }
 
 async function showAllBreeds() {
   const breeds = await loadAllBreedsNames(urlAPI);
 
-  console.log(breeds)
   for (const breed in breeds) {
     if (numberOfBreedButtons < quantityOfButtons) {
       if (breeds[breed].length === 0) {
