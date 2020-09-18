@@ -1,26 +1,14 @@
+import Pet from '../Pet';
 import loadRandomImages from './getDogData';
 import {
   showLoading,
   hideLoading
 } from '../loader';
 
-class Dog {
-  constructor() {
-    this.containerCarousel = document.querySelector('.main-carousel');
-    this.carouselCells = [];
-    this.quantityOfImages = 4;
+class Dog extends Pet {
+  constructor(petContainer, quantityOfImages) {
+    super(petContainer, quantityOfImages)
     this.loader = document.querySelector('.loader');
-  }
-
-  makeCarouselCell() {
-    for (let i = 0; i < this.quantityOfImages; i++) {
-      let carouselCell = document.createElement('div');
-      carouselCell.classList.add('carousel-cell');
-      this.carouselCells.push(carouselCell)
-    }
-    this.carouselCells.forEach(cell =>
-      this.containerCarousel.appendChild(cell)
-    )
   }
 
   addBackground(element, url) {
