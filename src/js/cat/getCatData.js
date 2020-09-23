@@ -1,12 +1,10 @@
 async function getCatData(url, apiKey) {
-  const request = await fetch(`${url}/breeds`, {
+  const request = await fetch(url, {
     headers: {
       'x-api-key': apiKey
     }
   });
   const data = await request.json();
-  console.log(data);
-
   return data;
 }
 

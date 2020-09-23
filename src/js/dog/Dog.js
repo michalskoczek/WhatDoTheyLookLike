@@ -11,20 +11,6 @@ class Dog extends Pet {
     this.loader = document.querySelector('.loader');
   }
 
-  addBackground(element, url) {
-    const background = document.createElement('div');
-    background.classList.add('carousel-cell__background');
-    background.style.backgroundImage = `url(${url})`;
-    element.appendChild(background);
-  }
-
-  addImage(element, image) {
-    const img = document.createElement('img');
-    img.classList.add('carousel-cell__img');
-    img.src = image;
-    element.appendChild(img);
-  }
-
   async addCell() {
     showLoading(this.loader);
     const images = await loadRandomImages(`https://dog.ceo/api/breeds/image/random/${this.quantityOfImages}`);
