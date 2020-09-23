@@ -12,9 +12,10 @@ export default function () {
   const flktySec = new Flickity(carousels[1], {
     cellAlign: 'left',
     contain: true,
-    freeScroll: true,
+    freeScroll: false,
+    wrapAround: true,
     contain: true,
-    prevNextButtons: false,
+    prevNextButtons: true,
     pageDots: false
   });
 }
