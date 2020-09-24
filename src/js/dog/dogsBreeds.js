@@ -23,8 +23,8 @@ function createBreedButton(name, type) {
       `https://dog.ceo/api/breed/${type}/images/random/4`,
     );
 
-    const carouselImgs = [...document.querySelectorAll('.carousel-cell__img')];
-    const carouselBackgroundImgs = [...document.querySelectorAll('.carousel-cell__background')];
+    const carouselImgs = [...document.querySelectorAll('.dog-container .carousel-cell__img')];
+    const carouselBackgroundImgs = [...document.querySelectorAll('.dog-container .carousel-cell__background')];
 
 
     carouselImgs.forEach((img, index) => {
