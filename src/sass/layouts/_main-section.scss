@@ -44,9 +44,14 @@
     flex-basis: 45%;
     height: 300px;
     position: static;
+    transition: margin-top .4s ease-out .1s;
   }
 
   @include breakPoint(xxl) {
     height: 400px;
   }
+}
+
+.dog-container--without-cat {
+  margin-top: 150px;
 }
