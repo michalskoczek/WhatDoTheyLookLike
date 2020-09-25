@@ -6,9 +6,14 @@
   align-items: center;
   height: 270px;
   overflow-y: auto;
+  transition: height .4s ease-out .1s;
 
   &__name {
     @include breed-button;
+
+    @include breakPoint(xl) {
+      width: 205px;
+    }
 
     @include breakPoint(xxl) {
       width: 260px;
@@ -28,6 +33,10 @@
 
       text-transform: lowercase;
       background-color: $color-red;
+
+      @include breakPoint(xl) {
+        width: 205px;
+      }
 
       @include breakPoint(xxl) {
         width: 260px;
@@ -50,9 +59,16 @@
 
   @include breakPoint(xl) {
     display: flex;
+    flex-basis: 49%;
   }
 
   @include breakPoint(xxl) {
     height: 400px;
+  }
+
+  &--without-cat {
+    @include breakPoint(xl) {
+      height: 95%;
+    }
   }
 }

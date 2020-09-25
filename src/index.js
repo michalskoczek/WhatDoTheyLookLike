@@ -8,6 +8,9 @@ import Cat from './js/cat/Cat';
 import {
   showAllBreeds as showAllCatsBreeds
 } from './js/cat/catsBreeds'
+import {
+  handleBigButton
+} from './js/dog/handleBigButton';
 
 const dog = new Dog('.main-carousel--dog', 4);
 dog.makeCarouselCell();
@@ -18,3 +21,4 @@ showAllCatsBreeds(cat.url, cat.apiKey);
 cat.addCell()
 Flickity();
 showAllBreeds();
+handleBigButton();
