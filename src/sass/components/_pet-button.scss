@@ -52,6 +52,26 @@
       transition: .4s linear;
     }
   }
+
+  &--arrow-cat {
+    @include breakPoint(xl) {
+      position: absolute;
+      height: 36px;
+      border: none;
+      border-radius: 20px;
+      font: $base-font-weight-bold $button-font-size/1 $base-font-family;
+      text-transform: uppercase;
+      color: #fff;
+      background-color: $color-red;
+      transform: translate(-50%, 50%);
+      z-index: 99;
+      left: -26%;
+      bottom: 45%;
+      width: 260px;
+      font-size: $button-font-size-large;
+      transition: .4s linear;
+    }
+  }
 }
 
 .fas {
