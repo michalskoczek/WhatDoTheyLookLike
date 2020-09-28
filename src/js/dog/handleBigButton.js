@@ -1,3 +1,12 @@
+import {
+  breeds,
+  addBreed
+} from './dogsBreeds';
+import {
+  searchBreed
+} from '../searchBar';
+let restBreeds = 0;
+
 function handleBigButton() {
   const dogButton = document.querySelector('.dog-container .pet-button');
   const catButton = document.querySelector('.cat-container .pet-button');
@@ -20,6 +29,23 @@ function handleBigButton() {
     arrowButton.classList.add('pet-button--arrow');
     arrowButton.appendChild(arrow);
     dogContainer.appendChild(arrowButton);
+
+    const moreButton = document.querySelector('.breeds__name--more');
+    moreButton.style.display = 'none';
+    for (const breed in breeds) {
+      restBreeds++;
+      if (restBreeds >= 19) {
+        if (breeds[breed].length === 0) {
+          addBreed(breed);
+        } else {
+          for (const subBreed of breeds[breed]) {
+            addBreed(breed, subBreed);
+          }
+        }
+      }
+    }
+
+    searchBreed();
 
     arrowButton.addEventListener('click', (e) => {
       e.preventDefault();
@@ -55,4 +81,6 @@ function handleBigButton() {
   });
 }
 
-export { handleBigButton };
+export {
+  handleBigButton
+};
