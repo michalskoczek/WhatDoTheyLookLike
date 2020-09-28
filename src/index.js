@@ -11,6 +11,9 @@ import {
 import {
   handleBigButton
 } from './js/dog/handleBigButton';
+import {
+  searchBreed
+} from './js/searchBar';
 
 const dog = new Dog('.main-carousel--dog', 4);
 dog.makeCarouselCell();
@@ -22,3 +25,4 @@ cat.addCell()
 Flickity();
 showAllBreeds();
 handleBigButton();
+//searchBreed();
