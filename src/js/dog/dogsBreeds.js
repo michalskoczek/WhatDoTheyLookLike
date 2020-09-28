@@ -7,9 +7,10 @@ import {
 const breedsContainer = document.querySelector('.breeds');
 const urlAPI = 'https://dog.ceo/api/breeds/list/all';
 const loader = document.querySelector('.loader');
+let breeds = [];
 let numberOfBreedButtons = 0;
 let quantityOfButtons = 19;
-let restBreeds;
+let restBreeds = 0;
 
 function createBreedButton(name, type) {
   const breedElement = document.createElement('button');
@@ -23,20 +24,22 @@ function createBreedButton(name, type) {
       `https://dog.ceo/api/breed/${type}/images/random/4`,
     );
 
-    const carouselImgs = [...document.querySelectorAll('.dog-container .carousel-cell__img')];
-    const carouselBackgroundImgs = [...document.querySelectorAll('.dog-container .carousel-cell__background')];
-
+    const carouselImgs = [
+      ...document.querySelectorAll('.dog-container .carousel-cell__img'),
+    ];
+    const carouselBackgroundImgs = [
+      ...document.querySelectorAll('.dog-container .carousel-cell__background'),
+    ];
 
     carouselImgs.forEach((img, index) => {
       img.src = `${urlImg[index]}`;
     });
     carouselBackgroundImgs.forEach((bgcImg, index) => {
-      bgcImg.style.backgroundImage = `url(${urlImg[index]})`
-    })
-    hideLoading(loader)
+      bgcImg.style.backgroundImage = `url(${urlImg[index]})`;
+    });
+    hideLoading(loader);
   });
 }
-
 
 function createMoreButton() {
   const moreButton = document.createElement('button');
@@ -47,12 +50,15 @@ function createMoreButton() {
   moreButton.addEventListener('click', () => {
     moreButton.style.display = 'none';
 
-    for (const breed in restBreeds) {
-      if (restBreeds[breed].length === 0) {
-        addBreed(breed);
-      } else {
-        for (const subBreed of restBreeds[breed]) {
-          addBreed(breed, subBreed);
+    for (const breed in breeds) {
+      restBreeds++;
+      if (restBreeds >= 19) {
+        if (breeds[breed].length === 0) {
+          addBreed(breed);
+        } else {
+          for (const subBreed of breeds[breed]) {
+            addBreed(breed, subBreed);
+          }
         }
       }
     }
@@ -75,28 +81,28 @@ function addBreed(breed, subBreed) {
 }
 
 async function showAllBreeds() {
-  const breeds = await loadAllBreedsNames(urlAPI);
+  breeds = await loadAllBreedsNames(urlAPI);
+  console.log(breeds);
 
   for (const breed in breeds) {
     if (numberOfBreedButtons < quantityOfButtons) {
       if (breeds[breed].length === 0) {
         addBreed(breed);
-        delete breeds[breed];
       } else {
         for (const subBreed of breeds[breed]) {
           addBreed(breed, subBreed);
-          delete breeds[breed];
         }
       }
     } else if (numberOfBreedButtons === quantityOfButtons) {
       createMoreButton();
-      restBreeds = breeds;
-      return restBreeds;
     }
     numberOfBreedButtons++;
   }
 }
 
 export {
-  showAllBreeds
+  showAllBreeds,
+  breeds,
+  createBreedButton,
+  addBreed
 };
