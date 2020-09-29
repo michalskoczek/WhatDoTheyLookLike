@@ -53,6 +53,7 @@ function handleBigButton() {
       catBreeds.style.display = 'flex';
       dogBreeds.classList.remove('breeds--without-cat');
       dogContainer.classList.remove('dog-container--without-cat');
+      document.getElementById('search-bar').style.visibility = 'hidden';
     });
   });
 
