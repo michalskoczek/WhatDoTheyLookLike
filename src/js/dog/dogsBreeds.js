@@ -11,6 +11,7 @@ let breeds = [];
 let numberOfBreedButtons = 0;
 let quantityOfButtons = 19;
 let restBreeds = 0;
+const breedsNames = [];
 
 function createBreedButton(name, type) {
   const breedElement = document.createElement('button');
@@ -82,7 +83,16 @@ function addBreed(breed, subBreed) {
 
 async function showAllBreeds() {
   breeds = await loadAllBreedsNames(urlAPI);
-  console.log(breeds);
+
+  for (const breed in breeds) {
+    if (breeds[breed].length === 0) {
+      breedsNames.push(breed);
+    } else {
+      for (const subBreed of breeds[breed]) {
+        breedsNames.push(`${breed} ${subBreed}`);
+      }
+    }
+  }
 
   for (const breed in breeds) {
     if (numberOfBreedButtons < quantityOfButtons) {
@@ -103,6 +113,7 @@ async function showAllBreeds() {
 export {
   showAllBreeds,
   breeds,
+  breedsNames,
   createBreedButton,
   addBreed
 };
