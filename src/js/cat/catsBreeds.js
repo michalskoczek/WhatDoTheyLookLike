@@ -81,10 +81,16 @@ async function showAllBreeds(url, apiKey) {
   breeds.forEach((breed, index) => {
     if (index < 18) {
       createBreedButtons(breed.name, breed.id);
+      breedsCatNames.push(breed.name);
+      breedsCatId.push(breed.id);
     } else if (index === 18) {
       createBreedButtons(breed.name, breed.id);
+      breedsCatNames.push(breed.name);
+      breedsCatId.push(breed.id);
       createMoreButton();
     } else {
+      breedsCatNames.push(breed.name);
+      breedsCatId.push(breed.id);
       ArrayOfRestBreeds.push({
         name: breed.name,
         id: breed.id
@@ -94,5 +100,9 @@ async function showAllBreeds(url, apiKey) {
 }
 
 export {
-  showAllBreeds
+  breedsCatNames,
+  breedsCatId,
+  showAllBreeds,
+  getRandomImagesByBreed,
+  showImageByBreed
 }
