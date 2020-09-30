@@ -45,7 +45,7 @@ function handleBigButton() {
       }
     }
 
-    searchBreed();
+    searchBreed('dog');
 
     arrowButton.addEventListener('click', (e) => {
       e.preventDefault();
@@ -71,6 +71,8 @@ function handleBigButton() {
     arrowButton.classList.add('pet-button--arrow-cat');
     arrowButton.appendChild(arrow);
     catContainer.insertBefore(arrowButton, catButton);
+
+    searchBreed('cat');
 
     arrowButton.addEventListener('click', (e) => {
       e.preventDefault();
