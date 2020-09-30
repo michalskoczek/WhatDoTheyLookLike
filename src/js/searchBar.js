@@ -97,9 +97,24 @@ const getImageByDogBreed = () => {
       });
       hideLoading(loader);
     });
-  })
-}
+  });
+};
 
+const getImageByCatBreed = () => {
+  const breedsCat = document.querySelectorAll('.breeds--without-dog .breeds__name');
+
+  breedsCat.forEach(breed => {
+    breed.addEventListener('click', async () => {
+      showLoading(loaderCat);
+      const nameBreed = breed.textContent;
+      const index = catsBreeds.indexOf(nameBreed);
+      const nameId = catsIds[index];
+      const urls = await getRandomImagesByBreed(nameId, apiKey);
+      showImageByBreed(urls);
+    })
+  })
+
+}
 export {
   searchBreed
 };
