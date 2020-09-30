@@ -53,33 +53,40 @@ const displayBreeds = (breeds, breedsContainer) => {
   breedsContainer.innerHTML = htmlString;
 };
 
+const getImageByDogBreed = () => {
+  const breeds = document.querySelectorAll(
+    '.breeds--without-cat .breeds__name',
+  );
+  console.log(breeds);
 
-const getImageByBreed = () => {
-  const breeds = document.querySelectorAll('.breeds--without-cat .breeds__name');
 
-  breeds.forEach(breed => {
-
+  breeds.forEach((breed) => {
     breed.addEventListener('click', async () => {
       showLoading(loader);
 
       const breedString = breed.textContent;
-      console.log(breedString);
-      if (breedString.includes(' ')) {
-        const index = breedString.indexOf(' ');
-        console.log(index);
-        console.log(breedString[index])
+      let subbreedString = '';
 
+      if (breedString.includes(' ')) {
+        const stringBreed = breedString.split('');
+        const index = breedString.indexOf(' ');
+        stringBreed[index] = '/';
+        subbreedString = stringBreed.join('');
       }
 
       const urlImg = await loadAllBreedsNames(
-        `https://dog.ceo/api/breed/${breed.textContent}/images/random/4`,
+        `https://dog.ceo/api/breed/${
+          breedString.includes(' ') ? subbreedString : breedString
+        }/images/random/4`,
       );
 
       const carouselImgs = [
         ...document.querySelectorAll('.dog-container .carousel-cell__img'),
       ];
       const carouselBackgroundImgs = [
-        ...document.querySelectorAll('.dog-container .carousel-cell__background'),
+        ...document.querySelectorAll(
+          '.dog-container .carousel-cell__background',
+        ),
       ];
 
       carouselImgs.forEach((img, index) => {
