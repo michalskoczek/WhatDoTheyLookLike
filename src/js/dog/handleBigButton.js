@@ -53,7 +53,7 @@ function handleBigButton() {
       catBreeds.style.display = 'flex';
       dogBreeds.classList.remove('breeds--without-cat');
       dogContainer.classList.remove('dog-container--without-cat');
-      document.getElementById('search-bar').style.visibility = 'hidden';
+      document.getElementById('search-wrapper').style.opacity = 0;
     });
   });
 
@@ -77,9 +77,10 @@ function handleBigButton() {
     arrowButton.addEventListener('click', (e) => {
       e.preventDefault();
       dogContainer.style.display = 'block';
-      dogBreeds.style.display = 'flex';
+      dogBreeds.style.display = 'block';
       catBreeds.classList.remove('breeds--without-dog');
       catContainer.classList.remove('dog-container--without-dog');
+      document.getElementById('search-wrapper').style.opacity = 0;
     });
   });
 }
