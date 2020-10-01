@@ -1,18 +1,12 @@
-import {
-  breedsNames
-} from './dog/dogsBreeds';
-import {
-  showLoading,
-  hideLoading
-} from './loader';
+import { breedsNames } from './dog/dogsBreeds';
+import { showLoading, hideLoading } from './loader';
 import loadAllBreedsNames from './dog/getDogData';
 import {
   breedsCatNames as catsBreeds,
   breedsCatId as catsIds,
   getRandomImagesByBreed,
-  showImageByBreed
-} from './cat/catsBreeds'
-
+  showImageByBreed,
+} from './cat/catsBreeds';
 
 const dogBreedsContainer = document.querySelector('.breeds');
 const catBreedsContainer = document.querySelector('.breeds--cat');
@@ -21,8 +15,8 @@ const loaderCat = document.querySelector('.loader--cat');
 const apiKey = '12cb4a70-1e20-4fb6-b39f-4aa91e55716b';
 
 const searchBreed = (pet) => {
-  const searchBar = document.getElementById('search-bar');
-  searchBar.style.visibility = 'visible';
+  const searchBar = document.getElementById('search-wrapper');
+  searchBar.style.opacity = 1;
 
   searchBar.addEventListener('keyup', (e) => {
     const searchBreed = e.target.value.toLowerCase();
@@ -40,7 +34,6 @@ const searchBreed = (pet) => {
       displayBreeds(filteredBreed, catBreedsContainer);
       getImageByCatBreed();
     }
-
   });
 };
 
@@ -58,7 +51,6 @@ const getImageByDogBreed = () => {
     '.breeds--without-cat .breeds__name',
   );
   console.log(breeds);
-
 
   breeds.forEach((breed) => {
     breed.addEventListener('click', async () => {
@@ -101,9 +93,11 @@ const getImageByDogBreed = () => {
 };
 
 const getImageByCatBreed = () => {
-  const breedsCat = document.querySelectorAll('.breeds--without-dog .breeds__name');
+  const breedsCat = document.querySelectorAll(
+    '.breeds--without-dog .breeds__name',
+  );
 
-  breedsCat.forEach(breed => {
+  breedsCat.forEach((breed) => {
     breed.addEventListener('click', async () => {
       showLoading(loaderCat);
       const nameBreed = breed.textContent;
@@ -111,10 +105,7 @@ const getImageByCatBreed = () => {
       const nameId = catsIds[index];
       const urls = await getRandomImagesByBreed(nameId, apiKey);
       showImageByBreed(urls);
-    })
-  })
-
-}
-export {
-  searchBreed
+    });
+  });
 };
+export { searchBreed };
