@@ -87,15 +87,22 @@ function handleBigButton() {
       dogBreeds.classList.remove('breeds--without-cat');
       dogContainer.classList.remove('dog-container--without-cat');
       document.getElementById('search-wrapper').style.opacity = 0;
+      document.getElementById('search-bar').value = '';
+      showDogBreeds(dogBreeds);
+      dogButton.removeAttribute('disabled');
+      dogBreeds.style.height = '';
+      document.querySelector('.pet-button--arrow').remove();
     });
   });
 
   catButton.addEventListener('click', (e) => {
     e.preventDefault();
+    catButton.setAttribute('disabled', false);
     dogContainer.style.display = 'none';
     dogBreeds.style.display = 'none';
     catBreeds.classList.add('breeds--without-dog');
     catContainer.classList.add('dog-container--without-dog');
+    catBreeds.style.height = 'fit-content';
 
     const arrowButton = document.createElement('button');
     const arrow = document.createElement('i');
@@ -104,6 +111,15 @@ function handleBigButton() {
     arrowButton.classList.add('pet-button--arrow-cat');
     arrowButton.appendChild(arrow);
     catContainer.insertBefore(arrowButton, catButton);
+
+
+
+    if (firstClickCat) {
+      document.querySelector('.breeds__name--more-cat').style.display = 'none';
+      ArrayOfRestBreeds.forEach(breed => createBreedButtons(breed.name, breed.id));
+      firstClickCat = false;
+    }
+
 
     searchBreed('cat');
 
@@ -114,6 +130,10 @@ function handleBigButton() {
       catBreeds.classList.remove('breeds--without-dog');
       catContainer.classList.remove('dog-container--without-dog');
       document.getElementById('search-wrapper').style.opacity = 0;
+      catBreeds.style.height = '';
+      showCatBreeds(catBreeds);
+      catButton.removeAttribute('disabled');
+      document.querySelector('.pet-button--arrow-cat').remove();
     });
   });
 }
