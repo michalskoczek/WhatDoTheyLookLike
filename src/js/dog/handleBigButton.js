@@ -44,10 +44,13 @@ function handleBigButton() {
 
   dogButton.addEventListener('click', (e) => {
     e.preventDefault();
+    dogButton.setAttribute('disabled', false);
+
     catContainer.style.display = 'none';
     catBreeds.style.display = 'none';
     dogBreeds.classList.add('breeds--without-cat');
     dogContainer.classList.add('dog-container--without-cat');
+    dogBreeds.style.height = 'fit-content';
 
     const arrowButton = document.createElement('button');
     const arrow = document.createElement('i');
