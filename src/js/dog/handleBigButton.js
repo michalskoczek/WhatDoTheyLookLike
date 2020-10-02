@@ -5,7 +5,34 @@ import {
 import {
   searchBreed
 } from '../searchBar';
+import {
+  breeds as breedsCats,
+  ArrayOfRestBreeds,
+  createBreedButtons
+} from '../cat/catsBreeds';
 let restBreeds = 0;
+let firstClick = true;
+let firstClickCat = true;
+
+function showDogBreeds(dogBreeds) {
+  dogBreeds.innerHTML = '';
+  for (const breed in breeds) {
+    if (breeds[breed].length === 0) {
+      addBreed(breed);
+    } else {
+      for (const subBreed of breeds[breed]) {
+        addBreed(breed, subBreed);
+      }
+    }
+  }
+}
+
+function showCatBreeds(catBreeds) {
+  catBreeds.innerHTML = '';
+  breedsCats.forEach((breed) => {
+    createBreedButtons(breed.name, breed.id);
+  })
+}
 
 function handleBigButton() {
   const dogButton = document.querySelector('.dog-container .pet-button');
