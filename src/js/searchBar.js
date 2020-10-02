@@ -1,5 +1,10 @@
-import { breedsNames } from './dog/dogsBreeds';
-import { showLoading, hideLoading } from './loader';
+import {
+  breedsNames
+} from './dog/dogsBreeds';
+import {
+  showLoading,
+  hideLoading
+} from './loader';
 import loadAllBreedsNames from './dog/getDogData';
 import {
   breedsCatNames as catsBreeds,
