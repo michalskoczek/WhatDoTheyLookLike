@@ -1,5 +1,10 @@
-import { breedsNames } from './dog/dogsBreeds';
-import { showLoading, hideLoading } from './loader';
+import {
+  breedsNames
+} from './dog/dogsBreeds';
+import {
+  showLoading,
+  hideLoading
+} from './loader';
 import loadAllBreedsNames from './dog/getDogData';
 import {
   breedsCatNames as catsBreeds,
@@ -50,7 +55,6 @@ const getImageByDogBreed = () => {
   const breeds = document.querySelectorAll(
     '.breeds--without-cat .breeds__name',
   );
-  console.log(breeds);
 
   breeds.forEach((breed) => {
     breed.addEventListener('click', async () => {
@@ -108,4 +112,6 @@ const getImageByCatBreed = () => {
     });
   });
 };
-export { searchBreed };
+export {
+  searchBreed
+};
