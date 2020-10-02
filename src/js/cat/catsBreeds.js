@@ -65,7 +65,7 @@ function createBreedButtons(name, id) {
 
 function createMoreButton() {
   const moreButton = document.createElement('button');
-  moreButton.className = 'breeds__name--more';
+  moreButton.className = 'breeds__name--more breeds__name--more-cat';
   moreButton.innerText = 'more breeds';
   breedsContainer.appendChild(moreButton);
 
@@ -77,7 +77,7 @@ function createMoreButton() {
 
 
 async function showAllBreeds(url, apiKey) {
-  const breeds = await getCatData(`${url}/breeds`, apiKey);
+  breeds = await getCatData(`${url}/breeds`, apiKey);
 
   breeds.forEach((breed, index) => {
     if (index < 18) {
@@ -101,8 +101,11 @@ async function showAllBreeds(url, apiKey) {
 }
 
 export {
+  breeds,
   breedsCatNames,
   breedsCatId,
+  ArrayOfRestBreeds,
+  createBreedButtons,
   showAllBreeds,
   getRandomImagesByBreed,
   showImageByBreed
