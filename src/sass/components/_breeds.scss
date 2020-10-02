@@ -6,7 +6,7 @@
   align-items: center;
   height: 270px;
   overflow-y: auto;
-  transition: height .4s ease-out .1s;
+  transition: height .4s ease-in-out .1s;
 
   &__name {
     @include breed-button;
@@ -69,7 +69,7 @@
   &--without-cat,
   &--without-dog {
     @include breakPoint(xl) {
-      height: 95%;
+      max-height: 95%;
     }
   }
 }
