@@ -60,19 +60,22 @@ function handleBigButton() {
     arrowButton.appendChild(arrow);
     dogContainer.appendChild(arrowButton);
 
-    const moreButton = document.querySelector('.breeds__name--more');
-    moreButton.style.display = 'none';
-    for (const breed in breeds) {
-      restBreeds++;
-      if (restBreeds >= 19) {
-        if (breeds[breed].length === 0) {
-          addBreed(breed);
-        } else {
-          for (const subBreed of breeds[breed]) {
-            addBreed(breed, subBreed);
+    document.querySelector('.breeds__name--more').style.display = 'none';
+
+    if (firstClick) {
+      for (const breed in breeds) {
+        restBreeds++;
+        if (restBreeds >= 19) {
+          if (breeds[breed].length === 0) {
+            addBreed(breed);
+          } else {
+            for (const subBreed of breeds[breed]) {
+              addBreed(breed, subBreed);
+            }
           }
         }
       }
+      firstClick = false;
     }
 
     searchBreed('dog');
