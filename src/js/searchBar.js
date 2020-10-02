@@ -55,7 +55,6 @@ const getImageByDogBreed = () => {
   const breeds = document.querySelectorAll(
     '.breeds--without-cat .breeds__name',
   );
-  console.log(breeds);
 
   breeds.forEach((breed) => {
     breed.addEventListener('click', async () => {
@@ -113,4 +112,6 @@ const getImageByCatBreed = () => {
     });
   });
 };
-export { searchBreed };
+export {
+  searchBreed
+};
