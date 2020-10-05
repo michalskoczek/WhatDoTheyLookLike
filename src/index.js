@@ -12,8 +12,11 @@ import {
   handleBigButton
 } from './js/dog/handleBigButton';
 import {
-  searchBreed
-} from './js/searchBar';
+  dogBtnMobile
+} from './js/dog/dogsButtonMobile';
+
+const screenWidth = document.body.offsetWidth;
+
 
 const dog = new Dog('.main-carousel--dog', 4);
 dog.makeCarouselCell();
@@ -24,5 +27,9 @@ showAllCatsBreeds(cat.url, cat.apiKey);
 cat.addCell()
 Flickity();
 showAllBreeds();
-handleBigButton();
-//searchBreed();
+
+if (screenWidth > 1200) {
+  handleBigButton();
+} else if (screenWidth <= 1200) {
+  dogBtnMobile();
+}
