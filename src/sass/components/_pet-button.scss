@@ -74,6 +74,10 @@
       transition: .4s linear;
       cursor: pointer;
     }
+
+    @include breakPoint(xxl) {
+      bottom: 42%;
+    }
   }
 }
 

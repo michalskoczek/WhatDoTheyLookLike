@@ -21,7 +21,8 @@ const apiKey = '12cb4a70-1e20-4fb6-b39f-4aa91e55716b';
 
 const searchBreed = (pet) => {
   const searchBar = document.getElementById('search-wrapper');
-  searchBar.style.opacity = 1;
+  // searchBar.style.opacity = 1;
+  searchBar.style.display = 'flex';
 
   searchBar.addEventListener('keyup', (e) => {
     const searchBreed = e.target.value.toLowerCase();

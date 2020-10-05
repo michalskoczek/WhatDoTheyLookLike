@@ -87,7 +87,7 @@ function handleBigButton() {
       catBreeds.style.display = 'flex';
       dogBreeds.classList.remove('breeds--without-cat');
       dogContainer.classList.remove('dog-container--without-cat');
-      document.getElementById('search-wrapper').style.opacity = 0;
+      document.getElementById('search-wrapper').style.display = 'none';
       document.getElementById('search-bar').value = '';
       showDogBreeds(dogBreeds);
       dogButton.removeAttribute('disabled');
@@ -130,7 +130,7 @@ function handleBigButton() {
       dogBreeds.style.display = 'block';
       catBreeds.classList.remove('breeds--without-dog');
       catContainer.classList.remove('dog-container--without-dog');
-      document.getElementById('search-wrapper').style.opacity = 0;
+      document.getElementById('search-wrapper').style.display = 'none';
       document.getElementById('search-bar').value = '';
       catBreeds.style.height = '';
       showCatBreeds(catBreeds);
