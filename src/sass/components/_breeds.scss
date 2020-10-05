@@ -6,7 +6,7 @@
   align-items: center;
   height: 270px;
   overflow-y: auto;
-  transition: height .4s ease-in-out .1s;
+  transition: height 0.4s ease-in-out 0.1s;
 
   &__name {
     @include breed-button;
@@ -42,7 +42,6 @@
         width: 260px;
         margin: 0 20px 10px 5px;
       }
-
     }
   }
 
@@ -64,6 +63,7 @@
 
   @include breakPoint(xxl) {
     height: 400px;
+    flex-basis: 46%;
   }
 
   &--without-cat,
