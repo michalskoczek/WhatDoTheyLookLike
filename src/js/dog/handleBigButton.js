@@ -60,9 +60,10 @@ function handleBigButton() {
     arrowButton.appendChild(arrow);
     dogContainer.appendChild(arrowButton);
 
-    document.querySelector('.breeds__name--more').style.display = 'none';
+
 
     if (firstClick) {
+      document.querySelector('.breeds__name--more').style.display = 'none';
       for (const breed in breeds) {
         restBreeds++;
         if (restBreeds >= 19) {
@@ -130,6 +131,7 @@ function handleBigButton() {
       catBreeds.classList.remove('breeds--without-dog');
       catContainer.classList.remove('dog-container--without-dog');
       document.getElementById('search-wrapper').style.opacity = 0;
+      document.getElementById('search-bar').value = '';
       catBreeds.style.height = '';
       showCatBreeds(catBreeds);
       catButton.removeAttribute('disabled');
