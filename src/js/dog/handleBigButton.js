@@ -60,9 +60,10 @@ function handleBigButton() {
     arrowButton.appendChild(arrow);
     dogContainer.appendChild(arrowButton);
 
-    document.querySelector('.breeds__name--more').style.display = 'none';
+
 
     if (firstClick) {
+      document.querySelector('.breeds__name--more').style.display = 'none';
       for (const breed in breeds) {
         restBreeds++;
         if (restBreeds >= 19) {
