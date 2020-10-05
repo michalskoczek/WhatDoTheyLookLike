@@ -21,7 +21,7 @@
     top: 48%;
     left: 50%;
     height: 85%;
-    width: 82%;
+    width: 85%;
     margin: 0 auto;
     transform: translate(-50%, -50%);
 
@@ -54,7 +54,9 @@
 
 .dog-container--without-cat,
 .dog-container--without-dog {
-  margin-top: 150px;
+  @include breakPoint(xl) {
+    margin-top: 150px;
+  }
 
   @include breakPoint(xxl) {
     margin-top: 200px;
