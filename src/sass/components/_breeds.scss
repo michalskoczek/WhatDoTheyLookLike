@@ -11,6 +11,9 @@
   &__name {
     @include breed-button;
 
+    width: 100%;
+
+
     @include breakPoint(xl) {
       width: 205px;
     }
@@ -64,6 +67,11 @@
   @include breakPoint(xxl) {
     height: 400px;
     flex-basis: 46%;
+  }
+
+  &--without-cat {
+    display: flex;
+
   }
 
   &--without-cat,
