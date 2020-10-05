@@ -131,6 +131,7 @@ function handleBigButton() {
       catBreeds.classList.remove('breeds--without-dog');
       catContainer.classList.remove('dog-container--without-dog');
       document.getElementById('search-wrapper').style.opacity = 0;
+      document.getElementById('search-bar').value = '';
       catBreeds.style.height = '';
       showCatBreeds(catBreeds);
       catButton.removeAttribute('disabled');
