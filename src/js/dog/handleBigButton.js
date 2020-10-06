@@ -8,7 +8,7 @@ import {
 import {
   breeds as breedsCats,
   ArrayOfRestBreeds,
-  createBreedButtons
+  createBreedButtons,
 } from '../cat/catsBreeds';
 let restBreeds = 0;
 let firstClick = true;
@@ -31,7 +31,7 @@ function showCatBreeds(catBreeds) {
   catBreeds.innerHTML = '';
   breedsCats.forEach((breed) => {
     createBreedButtons(breed.name, breed.id);
-  })
+  });
 }
 
 function handleBigButton() {
@@ -59,8 +59,6 @@ function handleBigButton() {
     arrowButton.classList.add('pet-button--arrow');
     arrowButton.appendChild(arrow);
     dogContainer.appendChild(arrowButton);
-
-
 
     if (firstClick) {
       document.querySelector('.breeds__name--more').style.display = 'none';
@@ -113,14 +111,13 @@ function handleBigButton() {
     arrowButton.appendChild(arrow);
     catContainer.insertBefore(arrowButton, catButton);
 
-
-
     if (firstClickCat) {
       document.querySelector('.breeds__name--more-cat').style.display = 'none';
-      ArrayOfRestBreeds.forEach(breed => createBreedButtons(breed.name, breed.id));
+      ArrayOfRestBreeds.forEach((breed) =>
+        createBreedButtons(breed.name, breed.id),
+      );
       firstClickCat = false;
     }
-
 
     searchBreed('cat');
 
@@ -141,5 +138,6 @@ function handleBigButton() {
 }
 
 export {
-  handleBigButton
+  handleBigButton,
+  showDogBreeds
 };
