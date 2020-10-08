@@ -29,12 +29,12 @@ function dogBtnMobile() {
     newDogButton.textContent = 'dogs';
     mainPetsContainer.insertBefore(newDogButton, dogsBreeds);
     mainPetsContainer.style.height = '95%';
-    console.log(newDogButton);
 
     setTimeout(() => {
       dogContainer.style.opacity = 1;
       dogsBreeds.style.display = 'flex';
       dogsBreeds.style.margin = '0 0 15px 0';
+      dogsBreeds.classList.add('breeds--without-cat');
     }, 300);
 
     const arrowButton = document.createElement('button');
