@@ -14,6 +14,9 @@ import {
 import {
   dogBtnMobile
 } from './js/dog/dogsButtonMobile';
+import {
+  catsBtnMobile
+} from './js/cat/catsButtonMobile';
 
 const screenWidth = document.body.offsetWidth;
 
@@ -32,4 +35,5 @@ if (screenWidth > 1200) {
   handleBigButton();
 } else if (screenWidth <= 1200) {
   dogBtnMobile();
+  catsBtnMobile();
 }
