@@ -139,5 +139,6 @@ function handleBigButton() {
 
 export {
   handleBigButton,
-  showDogBreeds
+  showDogBreeds,
+  showCatBreeds
 };
