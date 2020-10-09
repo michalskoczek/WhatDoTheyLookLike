@@ -32,8 +32,11 @@ Flickity();
 showAllBreeds();
 
 if (screenWidth > 1200) {
+  console.log('weszło duże');
+  
   handleBigButton();
 } else if (screenWidth <= 1200) {
+    console.log('weszło małe');
   dogBtnMobile();
   catsBtnMobile();
 }

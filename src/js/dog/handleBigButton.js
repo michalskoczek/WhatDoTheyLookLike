@@ -77,7 +77,7 @@ function handleBigButton() {
       firstClick = false;
     }
 
-    searchBreed('dog');
+    searchBreed(dogButton.textContent);
 
     arrowButton.addEventListener('click', (e) => {
       e.preventDefault();
@@ -88,6 +88,7 @@ function handleBigButton() {
       document.getElementById('search-wrapper').style.display = 'none';
       document.getElementById('search-bar').value = '';
       showDogBreeds(dogBreeds);
+       showCatBreeds(catBreeds);
       dogButton.removeAttribute('disabled');
       dogBreeds.style.height = '';
       document.querySelector('.pet-button--arrow').remove();
@@ -119,7 +120,7 @@ function handleBigButton() {
       firstClickCat = false;
     }
 
-    searchBreed('cat');
+    searchBreed(catButton.textContent);
 
     arrowButton.addEventListener('click', (e) => {
       e.preventDefault();
@@ -131,6 +132,7 @@ function handleBigButton() {
       document.getElementById('search-bar').value = '';
       catBreeds.style.height = '';
       showCatBreeds(catBreeds);
+      showDogBreeds(dogBreeds);
       catButton.removeAttribute('disabled');
       document.querySelector('.pet-button--arrow-cat').remove();
     });

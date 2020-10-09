@@ -20,20 +20,21 @@ const loaderCat = document.querySelector('.loader--cat');
 const apiKey = '12cb4a70-1e20-4fb6-b39f-4aa91e55716b';
 
 const searchBreed = (pet) => {
-  const searchBar = document.getElementById('search-wrapper');
-  // searchBar.style.opacity = 1;
-  searchBar.style.display = 'flex';
+  const searchWrapper = document.getElementById('search-wrapper');
+  searchWrapper.style.display = 'flex';
+
+  const searchBar = document.getElementById('search-bar');
 
   searchBar.addEventListener('keyup', (e) => {
     const searchBreed = e.target.value.toLowerCase();
 
-    if (pet === 'dog') {
+    if (pet === 'dogs') {
       const filteredBreed = breedsNames.filter((breed) => {
         return breed.toLowerCase().includes(searchBreed);
       });
       displayBreeds(filteredBreed, dogBreedsContainer);
       getImageByDogBreed();
-    } else if (pet === 'cat') {
+    } else if (pet === 'cats') {
       const filteredBreed = catsBreeds.filter((breed) => {
         return breed.toLowerCase().includes(searchBreed);
       });
@@ -56,7 +57,7 @@ const getImageByDogBreed = () => {
   const breeds = document.querySelectorAll(
     '.breeds--without-cat .breeds__name',
   );
-
+console.log('weszło psy');
   breeds.forEach((breed) => {
     breed.addEventListener('click', async () => {
       showLoading(loader);
@@ -101,6 +102,7 @@ const getImageByCatBreed = () => {
   const breedsCat = document.querySelectorAll(
     '.breeds--without-dog .breeds__name',
   );
+console.log('weszło koty');
 
   breedsCat.forEach((breed) => {
     breed.addEventListener('click', async () => {
