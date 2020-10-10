@@ -54,7 +54,7 @@
     background-color: transparent;
     color: transparent;
 
-    @media all and (min-width: 320px) {
+    @media all and (min-width: 320px) and (max-width: 576px) {
       display: none;
     }
   }

@@ -6,7 +6,6 @@ function catsBtnMobile() {
   const catsButton = document.querySelector('.cat-container .pet-button');
   const catContainer = document.querySelector('.cat-container');
   const dogContainer = document.querySelector('.dog-container');
-  const dogsBreeds = document.querySelector('.breeds');
   const catsBreeds = document.querySelector('.breeds--cat');
   const mainPetsContainer = document.querySelector('.main__pets-container');
 
@@ -41,7 +40,7 @@ function catsBtnMobile() {
     arrowButton.appendChild(arrow);
     newCatButton.appendChild(arrowButton);
 
-    searchBreed('cat');
+    searchBreed(newCatButton.textContent);
 
     arrowButton.addEventListener('click', e => {
       e.preventDefault();

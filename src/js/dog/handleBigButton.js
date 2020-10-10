@@ -42,10 +42,9 @@ function handleBigButton() {
   const catBreeds = document.querySelector('.breeds--cat');
   const dogBreeds = document.querySelector('.breeds');
 
-  dogButton.addEventListener('click', (e) => {
+  dogButton.addEventListener('click', (e) => {   
     e.preventDefault();
     dogButton.setAttribute('disabled', false);
-
     catContainer.style.display = 'none';
     catBreeds.style.display = 'none';
     dogBreeds.classList.add('breeds--without-cat');
@@ -61,7 +60,7 @@ function handleBigButton() {
     dogContainer.appendChild(arrowButton);
 
     if (firstClick) {
-      document.querySelector('.breeds__name--more').style.display = 'none';
+      document.querySelector('.breeds__name--more-dog').style.display = 'none';
       for (const breed in breeds) {
         restBreeds++;
         if (restBreeds >= 19) {
@@ -76,8 +75,8 @@ function handleBigButton() {
       }
       firstClick = false;
     }
-
-    searchBreed(dogButton.textContent);
+    
+    searchBreed('dog');
 
     arrowButton.addEventListener('click', (e) => {
       e.preventDefault();
@@ -88,7 +87,6 @@ function handleBigButton() {
       document.getElementById('search-wrapper').style.display = 'none';
       document.getElementById('search-bar').value = '';
       showDogBreeds(dogBreeds);
-       showCatBreeds(catBreeds);
       dogButton.removeAttribute('disabled');
       dogBreeds.style.height = '';
       document.querySelector('.pet-button--arrow').remove();
@@ -119,8 +117,8 @@ function handleBigButton() {
       );
       firstClickCat = false;
     }
-
-    searchBreed(catButton.textContent);
+   
+    searchBreed('cat');
 
     arrowButton.addEventListener('click', (e) => {
       e.preventDefault();
@@ -132,7 +130,6 @@ function handleBigButton() {
       document.getElementById('search-bar').value = '';
       catBreeds.style.height = '';
       showCatBreeds(catBreeds);
-      showDogBreeds(dogBreeds);
       catButton.removeAttribute('disabled');
       document.querySelector('.pet-button--arrow-cat').remove();
     });
