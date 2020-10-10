@@ -44,7 +44,8 @@ function createBreedButton(name, type) {
 
 function createMoreButton() {
   const moreButton = document.createElement('button');
-  moreButton.className = 'breeds__name--more';
+  moreButton.classList.add('breeds__name--more-dog');
+  moreButton.classList.add('breeds__name--more');
   moreButton.innerText = 'more breeds';
   breedsContainer.appendChild(moreButton);
 
