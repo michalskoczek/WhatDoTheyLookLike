@@ -4,15 +4,13 @@ Website where you can see what breeds of dogs and cats look like :dog: :cat:
 
 ### Technology
 
-![](https://img.shields.io/badge/<WORD_ON_LEFT>-<WORD_ON_RIGHT>-informational?style=flat&logo=<LOGO_NAME>&logoColor=white&color=2bbc8a)
+![](https://img.shields.io/badge/code-HTML-informational?style=flat&logo=HTML&logoColor=white&color=red)
+![](https://img.shields.io/badge/code-CSS-informational?style=flat&logo=css&logoColor=white&color=blue)
+![](https://img.shields.io/badge/code-JavaScript-informational?style=flat&logo=javascript&logoColor=white&color=yellow)
+![](https://img.shields.io/badge/tools-webpack-informational?style=flat&logo=webpack&logoColor=white&color=blue)
+![](https://img.shields.io/badge/tools-npm-informational?style=flat&logo=npm&logoColor=white&color=red)
+![](https://img.shields.io/badge/code-sass-informational?style=flat&logo=sass&logoColor=white&color=pink)
 
-- HTML 5 (https://img.shields.io/badge/code-html-yellow/?color=red&logo=html)
-- CSS 3 (https://img.shields.io/badge/code-css-yellow/?color=blue&logo=css)
-- JavaScript (ECMAScript6+) (https://img.shields.io/badge/code-JavaScript-yellow/?color=yellow&logo=javascript)
-- webpack (https://img.shields.io/badge/tools-webpack-yellow/?color=blue&logo=webpack)
-- npm (https://img.shields.io/badge/tools-npm-yellow/?color=red&logo=npm)
-- sass (https://img.shields.io/badge/code-sass-yellow/?color=pink&logo=sass)
+### Demo :rocket:
 
-### Demo
-
-[Demo](https://michalskoczek.github.io/WhatDoTheyLookLike/)
+[Click!](https://michalskoczek.github.io/WhatDoTheyLookLike/)
