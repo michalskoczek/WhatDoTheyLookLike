@@ -1,53 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Michał Skoczek" />
+    <meta
+      name="description"
+      content="The website displays pictures of all breeds of dogs and cats . It uses two separate APIs."
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <title>What do they look like?</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="Michał Skoczek">
-  <meta name="description"
-    content="The website displays pictures of all breeds of dogs and cats . It uses two separate APIs.">
-  <link rel="stylesheet" href="../node_modules/flickity/dist/flickity.min.css" media="screen">
-  <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
-  <title>What do they look like?</title>
-</head>
-
-<body class="wrapper">
-  <header class="header wrapper__header">
-    <h1 class="title header__title">What do they look like?</h1>
-    <div id="search-wrapper" class="search-wrapper">
-      <i class="fas fa-search"></i>
-      <input class="search-input" type="text" name="search-bar" id="search-bar" placeholder="search breed">
-
-    </div>
-  </header>
-
-
-
-  <main class="main wrapper__main">
-    <div class="main__pets-container">
-      <div class="breeds">
+  <body class="wrapper">
+    <header class="header wrapper__header">
+      <h1 class="title header__title">What do they look like?</h1>
+      <div id="search-wrapper" class="search-wrapper">
+        <i class="fas fa-search"></i>
+        <input
+          class="search-input"
+          type="text"
+          name="search-bar"
+          id="search-bar"
+          placeholder="search breed"
+        />
       </div>
-      <div class="dog-container">
-        <div class="main-carousel main-carousel--dog" data-flickity>
-        </div>
-        <div class="loader">
-          <div class="loader__content"></div>
-        </div>
-        <button class="pet-button">dogs</button>
-      </div>
-      <div class="cat-container">
-        <div class="main-carousel main-carousel--cat" data-flickity>
-        </div>
-        <div class="loader loader--cat">
-          <div class="loader__content"></div>
-        </div>
-        <button class="pet-button">cats</button>
-      </div>
-      <div class="breeds breeds--cat"></div>
-    </div>
-  </main>
-  <script src="../node_modules/flickity/dist/flickity.pkgd.min.js"></script>
-</body>
+    </header>
 
+    <main class="main wrapper__main">
+      <div class="main__pets-container">
+        <div class="breeds"></div>
+        <div class="dog-container">
+          <div class="main-carousel main-carousel--dog" data-flickity></div>
+          <div class="loader">
+            <div class="loader__content"></div>
+          </div>
+          <button class="pet-button">dogs</button>
+        </div>
+        <div class="cat-container">
+          <div class="main-carousel main-carousel--cat" data-flickity></div>
+          <div class="loader loader--cat">
+            <div class="loader__content"></div>
+          </div>
+          <button class="pet-button">cats</button>
+        </div>
+        <div class="breeds breeds--cat"></div>
+      </div>
+    </main>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  </body>
 </html>
