@@ -1,11 +1,12 @@
 @mixin breed-button {
-  height: 36px;
+  height: 32px;
   width: 185px;
-  margin: 0 10px 10px 0;
+  margin: 0 0 10px 0;
+  padding: 0;
   align-self: flex-start;
   border: transparent;
   border-radius: 20px;
-  font-size: $button-font-size;
+  font-size: $button-font-size-xxs;
   font-family: $alt-font-family;
   line-height: 2;
   text-align: center;
@@ -14,8 +15,6 @@
   background-color: $color-dark-blue;
   cursor: pointer;
 }
-
-;
 
 @mixin outline {
   &:focus {
