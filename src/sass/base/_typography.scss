@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Mali:wght@400;500;600;700&family=Roboto&display=swap');
 
-$base-font-family: 'Mali',
-cursive;
-$alt-font-family: 'Roboto',
-sans-serif;
+$base-font-family: 'Mali', cursive;
+$alt-font-family: 'Roboto', sans-serif;
 
 $title-font-size: 24px;
 $title-font-size-xs: 28px;
@@ -12,9 +10,10 @@ $title-font-size-xl: 40px;
 $title-font-size-xxl: 50px;
 
 //do poprawy na później
-$title-font-size-lg: 28px;
+$button-font-size-xxs: 16px;
 $button-font-size: 18px;
 $button-font-size-large: 22px;
+$title-font-size-lg: 28px;
 
 $base-font-weight-regular: 400;
 $base-font-weight-medium: 500;
