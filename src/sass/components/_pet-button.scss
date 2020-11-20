@@ -1,17 +1,13 @@
 .pet-button {
-  position: absolute;
+  @include arrow-pet-button;
+
   bottom: 0;
   left: 50%;
-  height: 36px;
   width: 130px;
-  border: none;
   border-radius: 20px;
-  font: $base-font-weight-bold $button-font-size/1 $base-font-family;
-  text-transform: uppercase;
-  color: #fff;
+  font-size: $button-font-size;
   background-color: $color-red;
   transform: translate(-50%, 50%);
-  cursor: pointer;
   z-index: 99;
 
   @include breakPoint(xl) {
@@ -33,65 +29,41 @@
     }
   }
 
-
   &--arrow {
-
     @media all and (min-width: 320px) and (max-width: 576px) {
-    position: absolute;
-    height: 36px;
-    border: none;
-    padding: 1px 10px;
-    font: $base-font-weight-bold $button-font-size/1 $base-font-family;
-    text-transform: uppercase;
-    color: #fff;
-    background-color: transparent;
-    z-index: 9999;
-    left: 5%;
-    top: 0;
-    font-size: $button-font-size-large;
-    transition: .4s linear;
-    cursor: pointer;
+      @include arrow-pet-button;
 
+      left: 5%;
+      top: 0;
+      padding: 1px 10px;
+      background-color: transparent;
+      z-index: 9999;
     }
 
     @include breakPoint(xl) {
-      position: absolute;
-      height: 36px;
-      border: none;
-      border-radius: 20px;
-      font: $base-font-weight-bold $button-font-size/1 $base-font-family;
-      text-transform: uppercase;
-      color: #fff;
-      background-color: $color-red;
-      transform: translate(-50%, 50%);
-      z-index: 99;
+      @include arrow-pet-button;
+
       left: -26%;
       bottom: 35%;
       width: 260px;
-      font-size: $button-font-size-large;
-      transition: .4s linear;
-      cursor: pointer;
+      border-radius: 20px;
+      background-color: $color-red;
+      transform: translate(-50%, 50%);
+      z-index: 99;
     }
   }
 
   &--arrow-cat {
     @include breakPoint(xl) {
-      position: absolute;
-      height: 36px;
-      border: none;
-      border-radius: 20px;
-      font: $base-font-weight-bold $button-font-size/1 $base-font-family;
-      text-transform: uppercase;
-      color: #fff;
-      background-color: $color-red;
-      transform: translate(-50%, 50%);
-      z-index: 99;
+      @include arrow-pet-button;
+
       left: -26%;
       bottom: 45%;
       width: 260px;
-      font-size: $button-font-size-large;
-      transition: .4s linear;
-      cursor: pointer;
+      border-radius: 20px;
+      background-color: $color-red;
+      transform: translate(-50%, 50%);
+      z-index: 99;
     }
 
     @include breakPoint(xxl) {
