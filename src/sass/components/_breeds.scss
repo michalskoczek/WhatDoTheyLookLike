@@ -19,6 +19,7 @@
 
     @include breakPoint(xl) {
       width: 205px;
+      margin: 0 10px 10px 0;
     }
 
     @include breakPoint(xxl) {
@@ -43,6 +44,7 @@
 
       @include breakPoint(xl) {
         width: 205px;
+        margin: 0 10px 10px 0;
       }
 
       @include breakPoint(xxl) {
