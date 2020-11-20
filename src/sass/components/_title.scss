@@ -11,7 +11,6 @@
   }
 
   @include breakPoint(md) {
-    padding: 15px 0;
     font-size: $title-font-size-md;
   }
 
@@ -26,6 +25,5 @@
   @include breakPoint(xxl) {
     padding: 15px 150px;
     font-size: $title-font-size-xxl;
-    line-height: 1.5;
   }
 }
