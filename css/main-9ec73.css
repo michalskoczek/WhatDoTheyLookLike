@@ -344,7 +344,6 @@ template {
       font-size: 28px; } }
   @media all and (min-width: 768px) {
     .title {
-      padding: 15px 0;
       font-size: 32px; } }
   @media all and (min-width: 1200px) {
     .title {
@@ -356,8 +355,7 @@ template {
   @media all and (min-width: 1400px) {
     .title {
       padding: 15px 150px;
-      font-size: 50px;
-      line-height: 1.5; } }
+      font-size: 50px; } }
 
 .pet-image {
   position: relative;
@@ -369,18 +367,20 @@ template {
 
 .pet-button {
   position: absolute;
-  bottom: 0;
-  left: 50%;
   height: 36px;
-  width: 130px;
   border: none;
-  border-radius: 20px;
-  font: 700 18px "Mali", cursive;
+  font: 700 22px "Mali", cursive;
   text-transform: uppercase;
   color: #fff;
+  transition: 0.4s linear;
+  cursor: pointer;
+  bottom: 0;
+  left: 50%;
+  width: 130px;
+  border-radius: 20px;
+  font-size: 18px;
   background-color: #ff304f;
   transform: translate(-50%, 50%);
-  cursor: pointer;
   z-index: 99; }
   @media all and (min-width: 1200px) {
     .pet-button {
@@ -401,53 +401,50 @@ template {
       position: absolute;
       height: 36px;
       border: none;
-      padding: 1px 10px;
-      font: 700 18px "Mali", cursive;
+      font: 700 22px "Mali", cursive;
       text-transform: uppercase;
       color: #fff;
-      background-color: transparent;
-      z-index: 9999;
+      transition: 0.4s linear;
+      cursor: pointer;
       left: 5%;
       top: 0;
-      font-size: 22px;
-      transition: .4s linear;
-      cursor: pointer; } }
+      padding: 1px 10px;
+      background-color: transparent;
+      z-index: 9999; } }
   @media all and (min-width: 1200px) {
     .pet-button--arrow {
       position: absolute;
       height: 36px;
       border: none;
-      border-radius: 20px;
-      font: 700 18px "Mali", cursive;
+      font: 700 22px "Mali", cursive;
       text-transform: uppercase;
       color: #fff;
-      background-color: #ff304f;
-      transform: translate(-50%, 50%);
-      z-index: 99;
+      transition: 0.4s linear;
+      cursor: pointer;
       left: -26%;
       bottom: 35%;
       width: 260px;
-      font-size: 22px;
-      transition: .4s linear;
-      cursor: pointer; } }
+      border-radius: 20px;
+      background-color: #ff304f;
+      transform: translate(-50%, 50%);
+      z-index: 99; } }
   @media all and (min-width: 1200px) {
     .pet-button--arrow-cat {
       position: absolute;
       height: 36px;
       border: none;
-      border-radius: 20px;
-      font: 700 18px "Mali", cursive;
+      font: 700 22px "Mali", cursive;
       text-transform: uppercase;
       color: #fff;
-      background-color: #ff304f;
-      transform: translate(-50%, 50%);
-      z-index: 99;
+      transition: 0.4s linear;
+      cursor: pointer;
       left: -26%;
       bottom: 45%;
       width: 260px;
-      font-size: 22px;
-      transition: .4s linear;
-      cursor: pointer; } }
+      border-radius: 20px;
+      background-color: #ff304f;
+      transform: translate(-50%, 50%);
+      z-index: 99; } }
   @media all and (min-width: 1400px) {
     .pet-button--arrow-cat {
       bottom: 42%; } }
@@ -490,7 +487,8 @@ template {
         height: 36px; } }
     @media all and (min-width: 1200px) {
       .breeds__name {
-        width: 205px; } }
+        width: 205px;
+        margin: 0 10px 10px 0; } }
     @media all and (min-width: 1400px) {
       .breeds__name {
         width: 260px;
@@ -522,7 +520,8 @@ template {
         outline: none; }
       @media all and (min-width: 1200px) {
         .breeds__name--more {
-          width: 205px; } }
+          width: 205px;
+          margin: 0 10px 10px 0; } }
       @media all and (min-width: 1400px) {
         .breeds__name--more {
           width: 260px;
@@ -585,20 +584,20 @@ template {
     position: absolute;
     top: 50%;
     left: 50%;
-    max-width: 100%;
-    max-height: 100%;
     transform: translate(-50%, -50%);
     background-size: cover;
+    max-width: 100%;
+    max-height: 100%;
     z-index: 99; }
   .carousel-cell__background {
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
+    background-size: cover;
     height: 110%;
     width: 110%;
     margin: -5%;
-    transform: translate(-50%, -50%);
-    background-size: cover;
     padding: 10px;
     filter: blur(10px); }
 
@@ -694,7 +693,6 @@ template {
   @media all and (min-width: 1200px) {
     .main {
       height: 100vh;
-      border-top-left-radius: 20px;
       border-top-right-radius: 0;
       border-bottom-left-radius: 20px; } }
   .main__pets-container {
@@ -726,7 +724,7 @@ template {
       flex-basis: 45%;
       height: 300px;
       position: static;
-      transition: margin-top .4s ease-out .1s; } }
+      transition: margin-top 0.4s ease-out 0.1s; } }
   @media all and (min-width: 1400px) {
     .dog-container,
     .cat-container {
